@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<!-- earth,hater,heart -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+
+  <!-- CSS stylesheet(s) -->
+  <link rel="stylesheet" type="text/css" href="main.css" />
+
+  <!-- Library script(s) -->
+  <script src="js/tracery.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+
+
+
+  <!-- My script(s) -->
+  <script src="js/script.js"></script>
+
+
+</head>
+<body>
+  <div id="title">
+  <h1>THE ANAGRAM GAME</h1>
+  <h2>An anagram is the result of rearranging the letters of a word or a phrase to produce a new word of phrase, using all the original letters exactly once.<br><br> Write a word with the given letters and discover the mystery</h2>
+  </div>
+
+  <form id="button"class="form" method="get" action="../password.html">
+  <button id="btn"class="box"><h3>Let's start</h3></button>
+  </form>
+  <!-- <div>
+    <label for="username">Password:</label>
+    <input type="text" id="username" name="username">
+  </div> -->
+
+<div id="story">blahblahblah</div>
+</body>
+
+<script>
+$(document).ready(setup)
+
+function setup(){
+  $('#story').hide();
+  console.log("ready");
+  console.log(story);
+}
+
+  let names = [
+    "Jeremy",
+    "Alicia",
+    "Matthew",
+    "Sophia",
+    "Xavier",
+    "Lea",
+    "Samuel",
+    "Constance",
+    "Joseph",
+    "Catherine",
+    "Fiona"
+  ];
+
+  let earthAdj = [
+    "magnificient",
+    "gorgeous",
+    "stormy",
+    "tough",
+    "careful",
+    "fragil",
+    "healthy",
+    "helpless"
+  ];
+
+  let earthAct = [
+    "destroy",
+    "kill",
+    "protest",
+    "speak up",
+    "change",
+  ];
+
+  let haterAdj = [
+    "dead",
+    "crazy",
+    "wicked",
+    "nasty",
+    "disturbing",
+    "troubled",
+    "evil",
+    "grumpy"
+  ];
+
+  let haterAct = [
+    "punish",
+    "scream",
+    "offended",
+    "attact",
+    "bring down",
+  ];
+
+  let heartAdj = [
+    "lovely",
+    "charming",
+    "graceful",
+    "adorable",
+    "splendid",
+    "precious",
+    "delightful",
+  ];
+
+  let heartAct = [
+    "hug",
+    "feel",
+    "devote",
+    "cherish",
+    "workship",
+  ];
+
+
+function chosePoem() {
+  if(answer == 'earth') {
+    storyEarth();
+  }
+  if(answer == 'hater') {
+    storyHater();
+  }
+  if(answer == 'heart') {
+    storyHeart();
+  }
+}
+
+function storyEarth() {
+    // varible to make a random story
+  var storyEarth = {
+    "start": "Everything was going #adjective# when suddenly Jack the #job# who loves to #hobby# came in running with a #object# in the room. Everybody who witnessed the scene started #verb# and decided to do #movement# to help the situation. But wait! said #name#, what is the noise I hear? This is when the #hero# of the situation came to the rescue. Berret the #qualitie# ran into the window on his #transport# and knocked down Jack. Everybody was #emotion# of how everything ended and went back home from the #place#. #name# the #animal# was so #emotion# that she went to see Berret to give him a #gift#. The end",
+    "name":[names],
+    "adjective":[earthAdj],
+    "verb":[earthAct]
+  }
+
+  var grammar = tracery.createGrammar(storyEarth);
+  var resultEarth = grammar.flatten("#start#");
+  $('#story').show();
+  $('#story').text(resultEarth);
+}
+
+function storyHater() {
+    // varible to make a random story
+  var storyHater = {
+    "start": "Everything was going #adjective# when suddenly Jack the #job# who loves to #hobby# came in running with a #object# in the room. Everybody who witnessed the scene started #verb# and decided to do #movement# to help the situation. But wait! said #name#, what is the noise I hear? This is when the #hero# of the situation came to the rescue. Berret the #qualitie# ran into the window on his #transport# and knocked down Jack. Everybody was #emotion# of how everything ended and went back home from the #place#. #name# the #animal# was so #emotion# that she went to see Berret to give him a #gift#. The end",
+    "name":[names],
+    "adjective":[haterAdj],
+    "verb":[haterAct]
+  }
+  var grammar = tracery.createGrammar(storyHater);
+  var resultHater = grammar.flatten("#start#");
+  $('#story').show();
+  $('#story').text(resultHater);
+}
+
+function storyHeart() {
+    // varible to make a random story
+  var storyHeart = {
+    "start": "Everything was going #adjective# when suddenly Jack the #job# who loves to #hobby# came in running with a #object# in the room. Everybody who witnessed the scene started #verb# and decided to do #movement# to help the situation. But wait! said #name#, what is the noise I hear? This is when the #hero# of the situation came to the rescue. Berret the #qualitie# ran into the window on his #transport# and knocked down Jack. Everybody was #emotion# of how everything ended and went back home from the #place#. #name# the #animal# was so #emotion# that she went to see Berret to give him a #gift#. The end",
+    "name":[names],
+    "adjective":[heartAdj],
+    "verb":[heartAct]
+  }
+  var grammar = tracery.createGrammar(storyHeart);
+  var resultHearth = grammar.flatten("#start#");
+  $('#story').show();
+  $('#story').text(resultHeart);
+}
+
+</script>
+</html>
